@@ -35,10 +35,4 @@ public class WeatherService {
         }
     }
 
-//    public void saveWeather() throws IOException {
-//        Date curDate = new Date();
-//        String curTemp = historyService.getTemp();
-//        Weather weather = new Weather(curDate, curTemp);
-//        weatherRepository.save(weather);
-//    }
 }
