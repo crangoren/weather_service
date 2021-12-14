@@ -1,5 +1,7 @@
 package task.weather_service.dto;
 
+import task.weather_service.resources.Weather;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 
@@ -8,9 +10,9 @@ public class WeatherDto {
     private String weatherDate;
     private String weatherValue;
 
-    public WeatherDto(String weatherDate, String weatherValue) {
-        this.weatherDate = weatherDate;
-        this.weatherValue = weatherValue;
+    public WeatherDto(Weather weather) {
+        this.weatherDate = weather.getWeatherDate();
+        this.weatherValue = weather.getWeatherValue();
     }
 
     public WeatherDto() {
