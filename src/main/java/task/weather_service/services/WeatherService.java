@@ -35,4 +35,9 @@ public class WeatherService {
         }
     }
 
+    public String saveWeather(Weather weather){
+        weatherRepository.save(weather);
+        return weather.getWeatherValue();
+    }
+
 }
