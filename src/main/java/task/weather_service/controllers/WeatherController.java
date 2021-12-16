@@ -26,10 +26,10 @@ public class WeatherController {
 
     @PostMapping
     public String newWeather(@RequestBody WeatherDto weatherDto) throws IOException {
-        Weather weather = new Weather();
-        weather.setWeatherDate(weatherDto.getWeatherDate());
-        weather.setWeatherValue(weatherDto.getWeatherValue());
-        weatherService.saveWeather(weather);
+        WeatherDto weatherdto = new WeatherDto();
+        weatherdto.setWeatherDate(weatherDto.getWeatherDate());
+        weatherdto.setWeatherValue(weatherDto.getWeatherValue());
+        weatherService.saveWeather(weatherdto);
         return weatherService.showWeather();
     }
 

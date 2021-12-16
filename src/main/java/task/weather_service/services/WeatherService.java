@@ -2,6 +2,7 @@ package task.weather_service.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import task.weather_service.dto.WeatherDto;
 import task.weather_service.repositories.WeatherRepository;
 import task.weather_service.resources.Weather;
 
@@ -35,7 +36,8 @@ public class WeatherService {
         }
     }
 
-    public String saveWeather(Weather weather){
+    public String saveWeather(WeatherDto weatherDto){
+        Weather weather = new Weather(weatherDto.getWeatherDate(), weatherDto.getWeatherValue());
         weatherRepository.save(weather);
         return weather.getWeatherValue();
     }
