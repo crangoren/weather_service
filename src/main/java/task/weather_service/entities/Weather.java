@@ -1,7 +1,6 @@
-package task.weather_service.resources;
+package task.weather_service.entities;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "weather_history")

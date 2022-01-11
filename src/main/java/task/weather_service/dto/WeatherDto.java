@@ -1,36 +1,18 @@
 package task.weather_service.dto;
 
-import task.weather_service.resources.Weather;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import task.weather_service.entities.Weather;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class WeatherDto {
 
     private String weatherDate;
     private String weatherValue;
 
-    public WeatherDto(Weather weather) {
-        this.weatherDate = weather.getWeatherDate();
-        this.weatherValue = weather.getWeatherValue();
-    }
-
-    public WeatherDto() {
-    }
-
-    public String getWeatherDate() {
-        return weatherDate;
-    }
-
-    public void setWeatherDate(String weatherDate) {
-        this.weatherDate = weatherDate;
-    }
-
-    public String getWeatherValue() {
-        return weatherValue;
-    }
-
-    public void setWeatherValue(String weatherValue) {
-        this.weatherValue = weatherValue;
-    }
 }
