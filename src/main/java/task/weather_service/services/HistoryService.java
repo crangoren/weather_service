@@ -14,7 +14,7 @@ public class HistoryService {
  * **/
 
     public String getTemp() throws IOException {
-        URL url = new URL("https://yandex.ru/?utm_source=google&utm_medium=search&utm_campaign=brand_search_msk%3Aspb&utm_term=yandex&gclid=CjwKCAiAksyNBhAPEiwAlDBeLD6DBZ3K2NEm2GbpAWTh1_lAaJ9dNLgsUtLajAeSMmZSQTYHLbzh5RoChuUQAvD_BwE&campaignid=1679697480&adgroupid=65697694936&creative=438922846234&keyword=yandex");
+        URL url = new URL("https://yandex.ru");
         InputStream in = url.openStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         StringBuilder buf = new StringBuilder();
@@ -27,7 +27,7 @@ public class HistoryService {
             }
         }
         String content = buf.toString();
-        String weatherValue = content.substring(content.indexOf("temp'>") +6, content.lastIndexOf("°<"));
+        String weatherValue = content.substring(content.indexOf("__temp") +8, content.lastIndexOf("°</div>"));
         return weatherValue;
     }
 

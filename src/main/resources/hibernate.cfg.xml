@@ -23,7 +23,7 @@
 
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
-        <mapping class="task.weather_service.resources.Weather" />
+        <mapping class="task.weather_service.entities.Weather" />
 
     </session-factory>
 </hibernate-configuration>
